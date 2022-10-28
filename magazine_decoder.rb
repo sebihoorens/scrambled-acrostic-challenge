@@ -19,6 +19,7 @@ class MagazineDecoder
 
   private
 
+  # Only preserve letters, spaces and new lines.
   def remove_unsupported_chars(text)
     text.gsub(/[^A-Za-z(\n) ]/, '')
   end

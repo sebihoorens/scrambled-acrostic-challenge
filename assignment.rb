@@ -1,10 +1,10 @@
 require './magazine_decoder'
 
 def secret_message?(file: 'lorem-ipsum.txt', possible_messages: nil)
-  magazine_text = MagazineDecoder.new File.read(file)
+  magazine = MagazineDecoder.new File.read(file)
   possible_messages ||= File.readlines 'secret_messages.txt', chomp: true
 
   possible_messages.any? do |message|
-    magazine_text.includes? message
+    magazine.includes? message
   end
 end
